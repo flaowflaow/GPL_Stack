@@ -573,16 +573,19 @@ sudo systemctl daemon-reload
 # Activation et démarrage du service Apache
 sudo systemctl enable apache2
 sudo systemctl restart apache2
+sleep 5
 # Activation et démarrage du service prometheus-apache-exporter
 sudo systemctl enable prometheus-apache-exporter.service
 sudo systemctl start prometheus-apache-exporter.service
+sleep 5
 # Activation et démarrage du service Node_Exporter
 sudo systemctl enable node_exporter
 sudo systemctl restart node_exporter
+sleep 5
 # Activation et démarrage du service Promtail
 sudo systemctl enable promtail
 sudo systemctl restart promtail
-
+sleep 10
       SHELL
     end
 end

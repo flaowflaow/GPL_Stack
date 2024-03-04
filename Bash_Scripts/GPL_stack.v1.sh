@@ -3,15 +3,19 @@
 # Services : Loki, Prometheus, Promtail & (R)Syslog
 # v1
 
+sudo apt-get install dos2unix -y
+dos2unix /tmp/GPL_stack.v1.sh
+
+
 # Installation des prérequis
-sudo apt install apt-transport-https software-properties-common wget curl unzip net-tools -y
+sudo apt-get install apt-transport-https software-properties-common wget curl unzip net-tools -y
 
 
 ### Installation de Grafana
 # Ajout des clés et dépôts de Grafana
 mkdir -p /etc/apt/keyrings/ && \
 wget -vO - https://packages.grafana.com/gpg.key | sudo apt-key add - && \
-sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
+sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main" -y
       
 # Installer grafana
 sudo apt-get update && sudo apt-get install -y grafana
@@ -266,7 +270,6 @@ scrape_configs:
       target_label: facility
     - source_labels: [__syslog_connection_hostname]
       target_label: connection_hostname
-      scrape_configs:
 EOF
 
 sudo cat <<"EOF" > /etc/systemd/system/promtail.service
