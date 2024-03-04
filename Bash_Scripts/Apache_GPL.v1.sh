@@ -127,7 +127,7 @@ server:
 positions:
   filename: /tmp/positions.yaml
 clients:
-  - url: http://192.168.33.20:3100/loki/api/v1/push
+  - url: http://192.168.200.20:3100/loki/api/v1/push
 scrape_configs:
 - job_name: apache_system
   static_configs:

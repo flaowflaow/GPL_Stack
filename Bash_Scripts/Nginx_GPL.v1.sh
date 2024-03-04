@@ -25,7 +25,6 @@ server {
   stub_status on;
   access_log off;
   allow 127.0.0.1;
-  allow 192.168.200.20;
   deny all;
 
   }
